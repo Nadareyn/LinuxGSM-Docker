@@ -79,7 +79,7 @@ rm -rf /var/lib/apt/lists/*
 
 ## linuxgsm.sh
 RUN set -ex; \
-curl https://linuxgsm.com/dl/linuxgsm.sh -iv
+curl https://linuxgsm.com/dl/linuxgsm.sh -Liv
 
 RUN set -ex; \
 wget https://linuxgsm.com/dl/linuxgsm.sh
