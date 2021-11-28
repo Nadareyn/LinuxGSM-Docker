@@ -79,10 +79,7 @@ rm -rf /var/lib/apt/lists/*
 
 ## linuxgsm.sh
 RUN set -ex; \
-curl https://linuxgsm.com/dl/linuxgsm.sh -Liv
-
-RUN set -ex; \
-wget https://linuxgsm.com/dl/linuxgsm.sh
+wget https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
 
 ## user config
 RUN set -ex; \
