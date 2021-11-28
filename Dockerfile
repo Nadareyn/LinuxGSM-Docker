@@ -79,6 +79,9 @@ rm -rf /var/lib/apt/lists/*
 
 ## linuxgsm.sh
 RUN set -ex; \
+curl https://linuxgsm.com/dl/linuxgsm.sh -iv
+
+RUN set -ex; \
 wget https://linuxgsm.com/dl/linuxgsm.sh
 
 ## user config
