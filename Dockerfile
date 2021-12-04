@@ -30,6 +30,7 @@ apt install -y \
     bsdmainutils \
     bzip2 \
     ca-certificates \
+    cron \
     curl \
     default-jre \
     expect \
