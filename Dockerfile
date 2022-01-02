@@ -78,6 +78,10 @@ apt install -y \
 apt-get clean; \
 rm -rf /var/lib/apt/lists/*
 
+## start cron
+RUN set -ex; \
+cron
+
 ## linuxgsm.sh
 RUN set -ex; \
 wget https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
@@ -92,10 +96,6 @@ cp /linuxgsm.sh /home/linuxgsm/linuxgsm.sh; \
 usermod -G tty linuxgsm; \
 chown -R linuxgsm:linuxgsm /home/linuxgsm/; \
 chmod 755 /home/linuxgsm
-
-## start cron
-RUN set -ex; \
-cron
 
 USER linuxgsm
 
