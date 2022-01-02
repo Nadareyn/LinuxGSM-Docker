@@ -3,9 +3,6 @@
 ## execute LinuxGSM or arbitrary server commands at will
 ## by passing command
 
-## start cron
-cron
-
 ## Because of a limitation in LinuxGSM script it must be run from the directory
 ## It is installed in.
 ##
