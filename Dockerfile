@@ -78,9 +78,17 @@ apt install -y \
 apt-get clean; \
 rm -rf /var/lib/apt/lists/*
 
-## start cron
+## Configure and start cron
+# Add crontab file in the cron directory
+ADD crontab /etc/cron.d/linuxgsm-cron
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/linuxgsm-cron
+# Apply cron job
+RUN crontab /etc/cron.d/linuxgsm-cron
+# Start cron
 RUN set -ex; \
 cron
+
 
 ## linuxgsm.sh
 RUN set -ex; \
