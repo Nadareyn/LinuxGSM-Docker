@@ -89,7 +89,7 @@ rm -rf /var/lib/apt/lists/*
 # RUN set -ex; \
 # cron
 
-CMD cron
+# CMD cron
 
 ## linuxgsm.sh
 RUN set -ex; \
