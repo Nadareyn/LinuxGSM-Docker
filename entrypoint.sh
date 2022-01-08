@@ -30,9 +30,7 @@ else
     tmux set -g status off && tmux attach 2> /dev/null
 fi
 
-cron
 crontab -u linuxgsm /var/spool/cron/crontabs/linuxgsm
-cron
 
 echo "Olol started"
 
