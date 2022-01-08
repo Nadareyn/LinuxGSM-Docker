@@ -13,6 +13,9 @@ if [ ! -e ~/linuxgsm.sh ]; then
     cp /linuxgsm.sh ./linuxgsm.sh
 fi
 
+crontab -u linuxgsm /var/spool/cron/crontabs/linuxgsm
+echo "Olol started"
+
 # with no command, just spawn a running container suitable for exec's
 if [ $# = 0 ]; then
     tail -f /dev/null
@@ -29,9 +32,5 @@ else
     # but requires -it or at least -t
     tmux set -g status off && tmux attach 2> /dev/null
 fi
-
-crontab -u linuxgsm /var/spool/cron/crontabs/linuxgsm
-
-echo "Olol started"
 
 exec "$@"
