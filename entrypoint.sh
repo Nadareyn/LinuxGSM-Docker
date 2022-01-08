@@ -34,4 +34,6 @@ cron
 crontab -u linuxgsm /var/spool/cron/crontabs/linuxgsm
 cron
 
+echo "Olol started"
+
 exec "$@"
