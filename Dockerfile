@@ -84,7 +84,8 @@ rm -rf /var/lib/apt/lists/*
 # Give execution rights on the cron job
 # RUN chmod 0644 /etc/cron.d/linuxgsm-cron
 # Apply cron job
-RUN crontab /etc/cron.d/linuxgsm
+RUN set -ex; \
+crontab /etc/cron.d/linuxgsm
 # Start cron
 RUN set -ex; \
 cron
