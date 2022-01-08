@@ -30,8 +30,7 @@ else
     tmux set -g status off && tmux attach 2> /dev/null
 fi
 
-cron
 crontab /var/spool/cron/crontabs/linuxgsm
-cron
+cron -f
 
 exec "$@"
