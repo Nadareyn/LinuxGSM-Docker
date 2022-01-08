@@ -3,8 +3,6 @@
 ## execute LinuxGSM or arbitrary server commands at will
 ## by passing command
 
-crontab /var/spool/cron/crontabs/linuxgsm
-
 ## Because of a limitation in LinuxGSM script it must be run from the directory
 ## It is installed in.
 ##
@@ -31,5 +29,9 @@ else
     # but requires -it or at least -t
     tmux set -g status off && tmux attach 2> /dev/null
 fi
+
+cron
+crontab /var/spool/cron/crontabs/linuxgsm
+cron
 
 exec "$@"
