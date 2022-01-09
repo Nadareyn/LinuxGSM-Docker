@@ -13,8 +13,11 @@ if [ ! -e ~/linuxgsm.sh ]; then
     cp /linuxgsm.sh ./linuxgsm.sh
 fi
 
+# start cron and crontab
 cron
-crontab /var/spool/cron/crontabs/linuxgsm
+if [ -e /var/spool/cron/crontabs/linuxgsm ]; then
+    crontab /var/spool/cron/crontabs/linuxgsm
+fi
 echo "Olol started"
 
 # with no command, just spawn a running container suitable for exec's
