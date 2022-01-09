@@ -13,7 +13,8 @@ if [ ! -e ~/linuxgsm.sh ]; then
     cp /linuxgsm.sh ./linuxgsm.sh
 fi
 
-crontab -u linuxgsm /var/spool/cron/crontabs/linuxgsm
+cron
+crontab /var/spool/cron/crontabs/linuxgsm
 echo "Olol started"
 
 # with no command, just spawn a running container suitable for exec's
