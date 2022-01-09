@@ -16,9 +16,9 @@ fi
 # start cron and crontab
 cron
 if [ -e /var/spool/cron/crontabs/linuxgsm ]; then
+    echo "Start crontab for Linuxgsm"
     crontab /var/spool/cron/crontabs/linuxgsm
 fi
-echo "Olol started"
 
 # with no command, just spawn a running container suitable for exec's
 if [ $# = 0 ]; then
