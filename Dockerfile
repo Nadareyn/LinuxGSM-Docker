@@ -78,20 +78,6 @@ apt install -y \
 apt-get clean; \
 rm -rf /var/lib/apt/lists/*
 
-## Configure and start cron
-# Add crontab file in the cron directory
-# ADD crontab /etc/cron.d/linuxgsm-cron
-# Give execution rights on the cron job
-# RUN chmod 0644 /etc/cron.d/linuxgsm-cron
-# Apply cron job
-# RUN set -ex; \
-# crontab /etc/cron.d/linuxgsm
-# Start cron
-RUN set -ex; \
-cron
-
-# CMD cron
-
 ## linuxgsm.sh
 RUN set -ex; \
 wget https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/linuxgsm.sh
@@ -106,6 +92,10 @@ cp /linuxgsm.sh /home/linuxgsm/linuxgsm.sh; \
 usermod -G tty linuxgsm; \
 chown -R linuxgsm:linuxgsm /home/linuxgsm/; \
 chmod 755 /home/linuxgsm
+
+## Configure cron
+RUN set -ex; \
+chmod gu+s /usr/sbin/cron
 
 USER linuxgsm
 
